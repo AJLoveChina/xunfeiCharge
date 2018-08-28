@@ -54,14 +54,19 @@ a{
   @width: 100px;
   @height: 300px;
 
-  &.disabled{
-    cursor:text;
-  }
+
   cursor:pointer;
   position: absolute;
   width: @width;
   height: @height;
   border: 1px solid #aaa;
+
+
+  &.disabled{
+    .interface{
+      cursor:no-drop;
+    }
+  }
 
   .interface {
     @w : 20px;
@@ -75,6 +80,12 @@ a{
     text-align: center;
     line-height: @h;
     margin-top:-@h / 2;
+    cursor: pointer;
+
+    &:hover {
+      color:white;
+      background: orange;
+    }
 
   }
 }

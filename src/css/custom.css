@@ -53,8 +53,8 @@ a.contact {
   height: 300px;
   border: 1px solid #aaa;
 }
-.zhuzi.disabled {
-  cursor: text;
+.zhuzi.disabled .interface {
+  cursor: no-drop;
 }
 .zhuzi .interface {
   position: absolute;
@@ -65,4 +65,9 @@ a.contact {
   text-align: center;
   line-height: 20px;
   margin-top: -10px;
+  cursor: pointer;
+}
+.zhuzi .interface:hover {
+  color: white;
+  background: orange;
 }
