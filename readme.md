@@ -4,10 +4,23 @@
 http://t.cn/RFPj6WH
 
 
-自己开发, 如何使用
+1.自己简单开发, 直接修改`src`目录下的文件即可。
+
+
+2.如果要用到gulp来做编辑后即时刷新, 參考以下俩步骤:
+
+进入 `src`目录执行
+```bash
+http-server -p 3838
+```
+
+然后返回根目录 `/` 执行
+
 ```bash
 npm install
 npm run start
 ```
 
-如果二维码有错误等, 欢迎提交commit
+然后浏览器会自动打开 `http://localhost:3001` 即可体验实时coding
+
+3.如果二维码有错误等, 欢迎提交commit
