@@ -1,0 +1,68 @@
+body {
+  padding: 20px;
+}
+.clearfix:after {
+  content: " ";
+  /* Older browser do not support empty content */
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.shitang {
+  width: 200px;
+  height: 100px;
+  border: 3px solid #aaa;
+  text-align: center;
+  line-height: 100px;
+}
+.a1 {
+  margin-top: 40px;
+  width: 150px;
+  height: 150px;
+  border: 3px solid #aaa;
+  text-align: center;
+  line-height: 100px;
+}
+.bike {
+  width: 100px;
+  height: 200px;
+  float: left;
+  border: 3px solid #aaa;
+  margin-top: 20px;
+  margin-right: 20px;
+  text-align: center;
+  line-height: 200px;
+}
+.container {
+  float: left;
+  font-family: Microsoft YaHei;
+  position: relative;
+  padding: 20px;
+  color: #333;
+  border: 3px solid #aaa;
+  margin-top: 20px;
+}
+a.contact {
+  color: #ccc;
+}
+.zhuzi {
+  cursor: pointer;
+  position: absolute;
+  width: 100px;
+  height: 300px;
+  border: 1px solid #aaa;
+}
+.zhuzi.disabled {
+  cursor: text;
+}
+.zhuzi .interface {
+  position: absolute;
+  background: #aaa;
+  width: 20px;
+  height: 20px;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  margin-top: -10px;
+}
