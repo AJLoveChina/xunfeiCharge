@@ -15,34 +15,48 @@ gulp.task('less', function () {
     // 2. 编译为css
         .pipe(less())
         // 3. 另存文件
-        .pipe(gulp.dest('./src/css'))
+        .pipe(gulp.dest('./dist/css'))
 });
 
-
-gulp.task('auto', function () {
-    // 监听文件修改，当文件被修改则执行 less任务
-    gulp.watch('./src/css/**.less', ['less'])
-});
 
 gulp.task('babel', function () {
-    gulp.src('src/js/*.js')
+    gulp.src('src/**/*.js')
         .pipe(babel({
             presets: ['env']
         }))
         .pipe(gulp.dest('dist'))
 });
 
-gulp.task('start', ['babel', 'less', 'auto'], function() {
+gulp.task('copy-img', function() {
+    return gulp.src('./src/imgs/*.*')
+        .pipe(gulp.dest('./dist/imgs'));
+});
+
+gulp.task('copy-html', function() {
+    return gulp.src('./src/index.html')
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('auto', function () {
+    // 监听文件修改，当文件被修改则执行 less任务
+    gulp.watch('./src/css/**.less', ['less']);
+    gulp.watch('./src/imgs/*.*', ['copy-img']);
+    gulp.watch('./src/index.html', ['copy-html']);
+    gulp.watch('src/**/*.js', ['babel'])
+});
+
+
+gulp.task('start', ['copy-html', 'copy-img', 'babel', 'less', 'auto'], function() {
     //所需要监听的文件
     var files = [
         "src/**",
     ];
 
     browserSync.init(files, {
-        proxy: 'http://127.0.0.1:3838', //所要代理的地址，端口要与bin/www中的端口一致
+        proxy: 'http://127.0.0.1:3838',
         browser: 'chrome',
         notify: false,
-        port: 3001    //代理地址的端口号
+        port: 3001
     });
 
     gulp.watch(files).on("change", reload);

@@ -32,7 +32,7 @@ $(function () {
             color: '#ccc'
         });
 
-        if (j == 0) {
+        if (i <= 0) {
             zhuzi.html("不<br>可<br>用")
             zhuzi.addClass("disabled")
         } else{
@@ -100,7 +100,10 @@ $(function () {
         "9": 101973,
         "10": 101979,
         "11": 101948,
-        "12": 101865
+        "12": 101865,
+        "13": 101614,
+        "14": 1011615,
+        '15': 1011616
     };
 
     $('.zhuzi .interface').click(function () {

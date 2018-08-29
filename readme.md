@@ -9,18 +9,16 @@ http://t.cn/RFPj6WH
 
 2.如果要用到gulp来做编辑后即时刷新, 參考以下俩步骤:
 
-进入 `src`目录执行
-```bash
-http-server -p 3838
-```
-
-然后返回根目录 `/` 执行
-
 ```bash
 npm install
 npm run start
 ```
 
-然后浏览器会自动打开 `http://localhost:3001` 即可体验实时coding
+然后进入生成的`dist`目录执行
+```bash
+http-server -p 3838
+```
 
-3.如果二维码有错误等, 欢迎提交commit
+然后浏览器会自动打开网页即可体验实时coding
+
+3.如果代码有错误, 欢迎提交commit
