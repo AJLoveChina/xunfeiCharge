@@ -114,17 +114,7 @@ $(function () {
             return layer.msg("这个充电桩还没搞好")
         }
 
-        layer.open({
-            type: 1,
-            title: `${bianhao[index]} - ${$(this).html()}号充电桩二维码`,
-            skin: 'layui-layer-demo', //样式类名
-            closeBtn: 0, //不显示关闭按钮
-            anim: 2,
-            shadeClose: true, //开启遮罩关闭
-            content: `<div style="padding:20px;"><p style="font-size:12px;line-height:20px;">扫描之后不知道自己的电瓶车插头编号<br>可以查看讯飞的那个小程序知晓<br>步骤:科大优享=>发现=>个人中心=>使用记录=>端口</p><div id="qrcode"></div></div></div>`
-        });
-
-        $('#qrcode').qrcode(`http://www.washpayer.com/userLogin?l=${bianhao[index]}&chargeindex=` + $(this).html());
+        showCode(bianhao[index], $(this).html());
     });
 
 
@@ -134,5 +124,31 @@ $(function () {
             time : 5000
         })
     })
+
+
+    $("#generate-button").click(function () {
+        let m = $("#bianhao-1").val(),
+            n = $("#bianhao-2").val();
+
+        if (!m || !n) {
+            return layer.msg("请输入充电桩编号和插座的编号")
+        }
+
+        return showCode(m, n);
+    });
+
+    function showCode(m, n) {
+        layer.open({
+            type: 1,
+            title: `${m} - ${n}号充电桩二维码`,
+            skin: 'layui-layer-demo', //样式类名
+            closeBtn: 0, //不显示关闭按钮
+            anim: 2,
+            shadeClose: true, //开启遮罩关闭
+            content: `<div style="padding:20px;"><p style="font-size:12px;line-height:20px;">扫描之后不知道自己的电瓶车插头编号<br>可以查看讯飞的那个小程序知晓<br>步骤:科大优享=>发现=>个人中心=>使用记录=>端口</p><div id="qrcode"></div></div></div>`
+        });
+
+        $('#qrcode').qrcode(`http://www.washpayer.com/userLogin?l=${m}&chargeindex=${n}`);
+    }
 });
 

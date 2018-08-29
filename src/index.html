@@ -12,6 +12,7 @@
 </head>
 <body>
 <h3 style="color:#666;">点击充电桩获取二维码:)</h3>
+<p style="font-size: 12px;color:#aaa;">忘记插座的端口号,可以通过 科大优享=>发现=>个人中心=>使用记录 中查询。如果连哪个充电桩都忘记了,<a href="#generate">点击这里</a></p>
 <div class="shitang">
     A2食堂
 </div>
@@ -30,6 +31,28 @@
     <p>2018.08.29 感谢@李笑笑童鞋提示, 使用URL编码二维码,无需使用图片, 识别更加迅速</p>
     <p>2018.08.28 有同事反馈同一充电桩不可以用一个二维码,不然如果这个二维码对应的端口正在充电,扫码无效(已修复)</p>
 </div>
+
+
+
+<div id="generate">
+    <h4>输入编号自动生成二维码</h4>
+    <div class="line">
+        充电桩编号 : <input type="text" id="bianhao-1" placeholder="输入充电桩编号"> <br>
+    </div>
+    <div class="line">
+        插座的编号 : <input type="text" id="bianhao-2" placeholder="输入插座编号"> <br>
+    </div>
+    <div class="line">
+        <button id="generate-button">生成二维码</button>
+    </div>
+    <div class="line">
+        <p class="small">Tip: 这俩个编号可以通过查询  微信=>科大优享=>发现=>个人中心=>使用记录=>设备编号 查询</p>
+        <p class="small">例如: 如果设备编号上面写的是  科大讯飞-串口充电桩-7-101970</p>
+        <p class="small">那么充电桩编号就是101970,  插座编号就是7</p>
+    </div>
+</div>
+
+<div style="height: 300px;"></div>
 
 </body>
 </html>
